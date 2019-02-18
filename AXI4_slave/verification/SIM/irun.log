@@ -1,0 +1,47 @@
+irun(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s051: Started on Feb 18, 2019 at 22:52:17 IST
+irun
+	-access +rwc
+	-f compile_list.f
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/1.AXI4_Slave_Write_Address.sv
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/2.AXI4_Slave_Write_Data.sv
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/3.AXI4_Slave_Write_Response.sv
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/4.AXI4_Slave_Read_Address.sv
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/5.AXI4_Slave_Read_Data.sv
+		./../../axi_top_rtl/AXI4_SLAVE_WITH_TOP/axi4_Slave_top.sv
+		./../UVME/uvm_pkg/test_pkg.sv
+		./../UVME/top/axi_top.sv
+		./../UVME/top/axi_interface.sv
+	-uvmhome CDNS-1.1d
+	+UVM_TESTNAME=axi_multiple_outstanding_address_test
+Recompiling... reason: unable to stat '/.//home/vv2trainee39/Desktop/Prajwal/AXI4_slave/verification/UVME/env/axi_coverage.sv'.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /tools/cadence/INCISIVE152/tools/methodology/UVM/CDNS-1.1d
+file: ./../UVME/uvm_pkg/test_pkg.sv
+      bins addr_word_aligned     = {[0:32'hFFFFFFFF]} with (item.AWADDR % 4 == 0);
+                                                                             |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,16|77): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_halfword_aligned = {[0:32'hFFFFFFFF]} with (item.AWADDR % 2 == 0 && item.AWADDR % 4 != 0);
+                                                                                  |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,17|82): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_byte_aligned     = {[0:32'hFFFFFFFF]} with (item.AWADDR % 2 != 0);
+                                                                             |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,18|77): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_4k_boundary      = {[0:32'hFFFFFFFF]} with (item.AWADDR[11:0] == 0);
+                                                                               |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,19|79): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_word_aligned     = {[0:32'hFFFFFFFF]} with (item.ARADDR % 4 == 0);
+                                                                             |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,95|77): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_halfword_aligned = {[0:32'hFFFFFFFF]} with (item.ARADDR % 2 == 0 && item.ARADDR % 4 != 0);
+                                                                                  |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,96|82): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_byte_aligned     = {[0:32'hFFFFFFFF]} with (item.ARADDR % 2 != 0);
+                                                                             |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,97|77): Hierarchical reference to a variable included in the "with" expression of a bin.
+      bins addr_4k_boundary      = {[0:32'hFFFFFFFF]} with (item.ARADDR[11:0] == 0);
+                                                                               |
+ncvlog: *E,COVHVWE (./../UVME/env/axi_cov_model.sv,98|79): Hierarchical reference to a variable included in the "with" expression of a bin.
+	package worklib.test_pkg:sv
+		errors: 8, warnings: 0
+irun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	irun(64)	15.20-s051: Exiting on Feb 18, 2019 at 22:52:19 IST  (total: 00:00:02)
